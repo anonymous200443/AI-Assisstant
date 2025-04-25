@@ -4,6 +4,7 @@
 # 🌐 Real-Time Multilingual AI Assistant 🤖
 
 A blazing-fast AI assistant that supports **real-time text, voice, and image input** with **multilingual output**, powered by **Groq LPU inference**, **FastAPI**, and **React**.
+View Website at https://aiassisstant.netlify.app/
 
 ---
 
