@@ -1,4 +1,3 @@
-Sure! Here's a complete **`README.md`** for your real-time multilingual AI assistant project built using Groq, FastAPI, and React:
 
 ---
 
