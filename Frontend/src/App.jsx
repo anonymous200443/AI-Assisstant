@@ -96,7 +96,7 @@ const App = () => {
       formData.append("tone", "polite and concise");
       formData.append("selected_language", selectedLanguage);
 
-      const res = await axios.post("http://localhost:8000/chat", formData);
+      const res = await axios.post("https://ai-assisstant.onrender.com/chat", formData);
       const reply = res.data.reply || "No response from AI";
       const lang = res.data.language || "en";
 
