@@ -10,6 +10,8 @@ import ChatMessages from "./components/Chatmessages";
 import { useState,useEffect,useRef } from "react";
 import './App.css'
 import OCRWithSpeech from "./components/OcrWithSpeech";
+import { Spin } from 'antd';
+
 
 
 const App = () => {
@@ -187,6 +189,18 @@ style={{
   selectedLanguage={selectedLanguage}
   setSelectedLanguage={setSelectedLanguage}
 />
+{/* {loading && (
+    <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
+      <Spin
+        height="40"
+        width="40"
+        color="#4fa94d"
+        ariaLabel="tail-spin-loading"
+        radius="1"
+        visible={true}
+      />
+    </div>
+  )} */}
 
 
 <ChatMessages
@@ -194,6 +208,7 @@ style={{
       darkMode={darkMode}
       copyToClipboard={copyToClipboard}
       chatEndRef={chatEndRef}
+      loading={loading}
     />
 
     {/* Suggested Replies */}

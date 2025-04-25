@@ -1,7 +1,8 @@
-// components/ChatMessages/ChatBubble.jsx
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import botui from "./../assets/bot_ui.json";
+// import { TailSpin } from "react-loader-spinner"; // Make sure this is installed
+import { Spin } from "antd";
 
 const bubbleVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.9 },
@@ -18,7 +19,7 @@ const bubbleVariants = {
   exit: { opacity: 0, y: -20, scale: 0.9 },
 };
 
-export default function ChatBubble({ msg, darkMode, copyToClipboard }) {
+export default function ChatBubble({ msg, darkMode, copyToClipboard, loading }) {
   return (
     <motion.div
       variants={bubbleVariants}
@@ -33,11 +34,13 @@ export default function ChatBubble({ msg, darkMode, copyToClipboard }) {
       }}
     >
       {msg.type === "bot" && (
-        <Lottie
-          animationData={botui}
-          loop
-          style={{ height: 60, marginRight: 10 }}
-        />
+        <div style={{ marginRight: 10 }}>
+          {loading ? (
+            <Spin size="large" />
+          ) : (
+            <Lottie animationData={botui} loop style={{ height: 60 }} />
+          )}
+        </div>
       )}
 
       <div
