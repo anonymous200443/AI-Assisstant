@@ -25,6 +25,10 @@ language_map = {
     "en": "English", "hi": "Hindi", "te": "Telugu",
     "fr": "French", "es": "Spanish",  # Extend this if needed
 }
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Render provides this PORT env variable
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
+    chat()
 
 @app.post("/chat")
 async def chat(
@@ -99,3 +103,4 @@ async def chat(
             "What's the summary?"
         ]
     }
+    
